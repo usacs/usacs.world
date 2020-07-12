@@ -24,5 +24,11 @@ def add_new_user():
 
     return "yeet yeet yeet"
 
+@app.route('/directory', methods=['GET'])
+def get_all_user():
+    with open("data.json", "r") as f:
+        data=json.load(f) 
+        return jsonify(data)
+
 if __name__ == "__main__":
     app.run()
